@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="./lib/vue.js"></script> -->
+    <link rel="stylesheet" href="../lib/bootstrap.dist/css/bootstrap.css">
+    <!-- <script src="/lib/bootstrap.dist/js/bootstrap.js"></script> -->
+    <title>Vue</title>
+    <style>
+       [v-clock] {
+           display: none;
+       }
+    </style> 
+</head>
+<body>
+    <div id="app" >
+        <!-- <p v-clock>{{msg}}</p> -->
+        <h4 v-text='msg'></h4>
+        <div v-html='msg2'></div>
+        <input type="button" class="btn btn-success" value="按钮1" v-bind:title='title' v-on:click='handle()'>
+        <input type="button" class="btn btn-success" value="按钮2" :title='title' @click='handle'>
+    </div>
+    <script src="../lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg:'开始学习vue',
+                msg2:'<h2>我是一个兵，来自老百姓</h2>',
+                title:'这是一个标题啊'
+            },
+            methods:{
+                handle:function () {
+                    alert('武汉加油')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
